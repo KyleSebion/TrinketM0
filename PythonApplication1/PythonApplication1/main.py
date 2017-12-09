@@ -38,11 +38,14 @@ i = 0
 while True:
   setLed = td1.value | td3.value | td4.value
   led.value = setLed
+  colors = None
   if setLed:
-    dot[0] = [td1.value * 128, td4.value * 128, td3.value * 128]
+    colors = [td1.value * 128, td4.value * 128, td3.value * 128]
   else:
-    dot[0] = wheel(i & 255)
+    colors = wheel(i & 255)
     i = (i + 1) % 256
+  print(colors)
+  dot[0] = colors
 
   #kbd.press(Keycode.A)
   #kbd.release_all()
