@@ -42,9 +42,9 @@ while True:
     dot[0] = [td1.value * 128, td3.value * 128, td4.value * 128]
   else:
     dot[0] = wheel(i & 255)
+    i = (i + 1) % 256
 
   #kbd.press(Keycode.A)
   #kbd.release_all()
 
-  i = (i + 1) % 256
   time.sleep(0.01) # make bigger to slow down
