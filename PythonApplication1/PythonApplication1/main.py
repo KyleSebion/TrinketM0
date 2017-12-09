@@ -50,4 +50,4 @@ while True:
   #kbd.press(Keycode.A)
   #kbd.release_all()
 
-  time.sleep(0.01) # make bigger to slow down
+  time.sleep(0.01)
