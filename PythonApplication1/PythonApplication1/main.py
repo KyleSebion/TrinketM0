@@ -34,13 +34,16 @@ def wheel(pos):
         pos -= 170
         return [0, int(pos * 3), int(255 - pos * 3)]
 
+led.value = True
+time.sleep(5)
+brightness = ((4 - td1.value - td3.value - td4.value) * 64) - 1
 i = 0
 while True:
   setLed = td1.value | td3.value | td4.value
   led.value = setLed
   colors = None
   if setLed:
-    colors = [td1.value * 128, td4.value * 128, td3.value * 128]
+    colors = [td1.value * brightness, td4.value * brightness, td3.value * brightness]
   else:
     colors = wheel(i & 255)
     i = (i + 1) % 256
